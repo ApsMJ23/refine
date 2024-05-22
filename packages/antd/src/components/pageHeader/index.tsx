@@ -4,15 +4,19 @@ import {
   PageHeaderProps as AntdPageHeaderProps,
 } from "@ant-design/pro-layout";
 import { Button, Typography } from "antd";
-import { ArrowLeftOutlined } from "@ant-design/icons";
+import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import { RefinePageHeaderClassNames } from "@refinedev/ui-types";
 
 export type PageHeaderProps = AntdPageHeaderProps;
 
 export const PageHeader: FC<AntdPageHeaderProps> = ({ children, ...props }) => {
+  const renderBackButton = () => {
+    if(props.backButtonOrientation === "right") return(      <Button type="text" icon={<ArrowRightOutlined />} />)
+    return( <Button type="text" icon={<ArrowLeftOutlined />} />)
+  }   
   const backIcon =
     typeof props.backIcon === "undefined" ? (
-      <Button type="text" icon={<ArrowLeftOutlined />} />
+      renderBackButton()
     ) : (
       props.backIcon
     );

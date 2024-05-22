@@ -67,6 +67,10 @@ export type RefineCrudListProps<
    */
   canCreate?: boolean;
   /**
+   * Additional props for the `<BackButton />` component
+   */
+  backButtonOrientation?: "left" | "right" ;
+  /**
    * Adds props for create button
    */
   createButtonProps?: TCreateButtonProps;
