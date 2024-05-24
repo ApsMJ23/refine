@@ -67,6 +67,10 @@ export type RefineCrudListProps<
    */
   canCreate?: boolean;
   /**
+   * Additional props for the `<BackButton />` component
+   */
+  backButtonOrientation?: "left" | "right" ;
+  /**
    * Adds props for create button
    */
   createButtonProps?: TCreateButtonProps;
@@ -147,6 +151,10 @@ export type RefineCrudCreateProps<
    * Additional props for the `<SaveButton />` component
    */
   saveButtonProps?: TSaveButtonProps;
+  /**
+     * Props to get the button orientation
+     */
+  backButtonOrientation?: "left" | "right";
 }> &
   TExtraProps;
 
@@ -267,6 +275,10 @@ export type RefineCrudEditProps<
    * Show <AutoSaveIndicator /> component on header buttons
    */
   autoSaveProps?: AutoSaveIndicatorProps;
+  /**
+     * Props to get the button orientation
+     */
+  backButtonOrientation?: "left" | "right";
 }> &
   TExtraProps;
 
@@ -372,5 +384,9 @@ export type RefineCrudShowProps<
    * The record id for `<RefreshButton />`
    */
   recordItemId?: BaseKey;
+  /**
+     * Props to get the button orientation
+     */
+  backButtonOrientation?: "left" | "right";
 }> &
   TExtraProps;
